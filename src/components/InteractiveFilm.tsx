@@ -13,6 +13,7 @@ export default function InteractiveFilm() {
     isEnded,
     goToNode,
     setShowChoices,
+    setEnded,
     resetStory,
   } = useStoryStore();
 
@@ -29,6 +30,12 @@ export default function InteractiveFilm() {
   const handleVideoEnded = () => {
     if (!currentNode) return;
 
+    // Jika ending scene, trigger ending screen
+    if (currentNode.isEnding) {
+      setEnded(true);
+      return;
+    }
+
     // Jika ada auto-transition (nextDefault), langsung pindah
     if (currentNode.nextDefault) {
       goToNode(currentNode.nextDefault);
@@ -37,7 +44,6 @@ export default function InteractiveFilm() {
     else if (currentNode.choices && currentNode.choices.length > 0) {
       setShowChoices(true);
     }
-    // Jika ending, tidak ada aksi otomatis (user lihat ending screen)
   };
 
   // Handle user choice
