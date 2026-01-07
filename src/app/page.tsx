@@ -73,7 +73,7 @@ export default function Home() {
         >
           {/* Title */}
           <h1 className="text-6xl md:text-8xl font-black mb-4 tracking-tighter drop-shadow-2xl">
-            THE CHOICE
+            Dosen Ghaib
           </h1>
 
           {/* Metadata */}
