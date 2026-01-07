@@ -1,7 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Play, Info, Volume2, VolumeX } from "lucide-react";
+import { Play, Info, Volume2, VolumeX, Image } from "lucide-react";
 import InteractiveFilm from "@/components/InteractiveFilm";
 import { useStoryStore } from "@/store/useStoryStore";
 
@@ -106,6 +106,15 @@ export default function Home() {
               <Info className="w-6 h-6" />
               More Info
             </button>
+            <a
+              href="/poster.png"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-8 py-3 bg-gray-500/40 text-white rounded font-bold text-lg hover:bg-gray-500/30 transition-colors backdrop-blur-sm"
+            >
+              <Image className="w-6 h-6" />
+              Lihat Poster
+            </a>
           </div>
         </motion.div>
       </main>
